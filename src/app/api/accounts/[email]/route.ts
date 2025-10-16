@@ -1,10 +1,10 @@
 import { supabase } from "@/lib/supabase";
 import { NextResponse } from "next/server";
 
-export async function GET(req : Request , {params} : {params :{email : string}}) {
+export async function GET(req : Request) {
 
     try{
-        const {email} = params;
+        const {email} = await req.json();
 
         const {data , error} = await supabase
                                         .from('accounts')
