@@ -1,10 +1,15 @@
 import { supabase } from "@/lib/supabase";
 import { NextResponse } from "next/server";
 
-export async function GET(req : Request) {
+export async function GET(
+  req: Request,
+  context: { params: Promise<{ email: string }> }
+) {
+  const { email } = await context.params;
 
-    try{
-        const {email} = await req.json();
+
+
+        console.log(req.url)
 
         const {data , error} = await supabase
                                         .from('accounts')
@@ -31,12 +36,5 @@ export async function GET(req : Request) {
         },{status : 200}
         )
                                               
-    }
-    catch(error){
-        return NextResponse.json(
-            {ok:false, error: (error as Error).message},
-            {status : 500}
-        )
-    }
     
 }
