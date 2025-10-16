@@ -5,13 +5,13 @@ import { postRegister } from "./servicies/registerService";
 const page: React.FC = () => {
 
     const data = {
-        first_name : 'Laura' ,
-        last_name_f : 'Gacia', 
-        last_name_m : 'Lopez' , 
+        first_name : 'Marco' ,
+        last_name_f : 'Gonzalez', 
+        last_name_m : 'Jimenez' , 
         birth_date : '2025-10-27 11:30:00-05' ,
         password_hash : 'pass1234',
-        email : 'lau.gar.lo@gmail.com' , 
-        phone : '5559704788'
+        email : 'mar.go.ji@gmail.com' , 
+        phone : '5559752788'
     }
 
     useEffect(()=>{
