@@ -1,6 +1,6 @@
 'use client'
 import React ,{ useEffect , useRef, useState } from "react";
-import { postRegister } from "./servicies/registerService";
+import { postRegister } from "./servicios/registro";
 import styled from "styled-components";
 
 const Container = styled.div`

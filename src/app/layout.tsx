@@ -19,16 +19,18 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+    <html lang="es">
+      <body>
+        {/* Aquí envuelves los hijos (que incluye page.tsx) con el router */}
+        <RouterProvider>
+          {children}
+        </RouterProvider>
       </body>
     </html>
   );
 }
+import RouterProvider from './router-provider';
