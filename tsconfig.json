@@ -19,7 +19,9 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      // 🔑 CORRECCIÓN: El alias @/ ahora busca en src/* Y en la raíz del proyecto (./*)
+      // Esto permite importar 'lib/supabaseServer' como '@/lib/supabaseServer'
+      "@/*": ["./src/*", "./*"] 
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
