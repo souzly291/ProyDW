@@ -186,7 +186,9 @@ const LoginPage: React.FC = () => {
     const handlerGoBack = () => {
         router.push('/');
     };
-
+    const handlerOnrecpass = () => {
+        router.push('/recuperar-contrasena');
+    };
     if (!isClient) {
         return <div style={{ padding: 50, textAlign: 'center' }}>Cargando...</div>;
     }
@@ -206,6 +208,10 @@ const LoginPage: React.FC = () => {
                 <SecondaryButton onClick={handlerGoBack} disabled={loading}>
                     Volver 🔙
                 </SecondaryButton>
+
+                <Button onClick={handlerOnrecpass} disabled={loading}>
+                    recupera tu contraseña
+                </Button>
             </Container>
 
             {/* Se mantiene el mensaje por si la redirección tarda, aunque usualmente se quita */}
